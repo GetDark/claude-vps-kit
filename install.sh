@@ -2,7 +2,7 @@
 # ============================================================
 # Claude Code — Автоустановщик окружения
 # Запуск: bash install.sh
-# Требования: Node.js 18+, Claude Code (VSCode extension)
+# Требования: Ubuntu/Debian, Claude Code (VSCode extension)
 # ============================================================
 
 set -e
@@ -22,10 +22,24 @@ echo "  Claude Code Environment Installer"
 echo "══════════════════════════════════════════"
 echo ""
 
-# --- 1. Проверки ---
-command -v node >/dev/null 2>&1 || fail "Node.js не установлен. Установи: https://nodejs.org"
-command -v npx  >/dev/null 2>&1 || fail "npx не найден. Обнови Node.js."
-log "Node.js $(node -v) найден"
+# --- 1. Node.js 20 LTS ---
+NODE_VERSION=20
+if command -v node >/dev/null 2>&1 && node -e "process.exit(parseInt(process.version.slice(1)) >= 18 ? 0 : 1)" 2>/dev/null; then
+    log "Node.js $(node -v) найден"
+else
+    warn "Устанавливаю Node.js $NODE_VERSION LTS..."
+    if command -v apt-get >/dev/null 2>&1; then
+        curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - >/dev/null 2>&1
+        apt-get install -y nodejs >/dev/null 2>&1
+    elif command -v yum >/dev/null 2>&1; then
+        curl -fsSL https://rpm.nodesource.com/setup_${NODE_VERSION}.x | bash - >/dev/null 2>&1
+        yum install -y nodejs >/dev/null 2>&1
+    else
+        fail "Пакетный менеджер не найден. Установи Node.js вручную: https://nodejs.org"
+    fi
+    log "Node.js $(node -v) установлен"
+fi
+command -v npx >/dev/null 2>&1 || fail "npx не найден после установки Node.js"
 
 # --- 2. uv (Python package manager для MCP серверов) ---
 if ! command -v uvx >/dev/null 2>&1 && [ ! -f "$HOME/.local/bin/uvx" ]; then
