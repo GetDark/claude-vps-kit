@@ -1,0 +1,136 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker *)",
+      "Bash(docker-compose *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(python3 *)",
+      "Bash(.venv/bin/pip *)",
+      "Bash(.venv/bin/python3 *)",
+      "Bash(apt *)",
+      "Bash(apt-get *)",
+      "Bash(curl *)",
+      "Bash(nginx *)",
+      "Bash(certbot *)",
+      "Bash(openssl *)",
+      "Bash(systemctl *)",
+      "Bash(journalctl *)",
+      "Bash(service *)",
+      "Bash(kill *)",
+      "Bash(pkill *)",
+      "Bash(ufw *)",
+      "Bash(iptables *)",
+      "Bash(nslookup *)",
+      "Bash(dig *)",
+      "Bash(ss *)",
+      "Bash(chmod *)",
+      "Bash(mkdir *)",
+      "Bash(ln *)",
+      "Bash(rm -f *)",
+      "Bash(awk *)",
+      "Bash(psql *)",
+      "Bash(git *)",
+      "Bash(claude mcp *)",
+      "Bash(/root/.vscode-server/extensions/*/resources/native-binary/claude mcp *)",
+      "Bash(/root/.vscode-server/extensions/*/resources/native-binary/claude plugin *)",
+      "Bash(bash *)",
+      "Bash(echo \"EXIT: $?\")",
+      "Read(/etc/nginx/**)",
+      "Read(/etc/letsencrypt/**)",
+      "Read(/var/log/nginx/**)",
+      "Read(/var/www/**)",
+      "Read(/root/projects/**)",
+      "Read(/etc/systemd/system/**)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_fill_form",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_network_requests",
+      "mcp__playwright__browser_network_request",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_hover",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_wait_for",
+      "mcp__docker__docker_container_list",
+      "mcp__docker__docker_container_logs",
+      "mcp__docker__docker_container_inspect",
+      "mcp__docker__docker_container_restart",
+      "mcp__docker__docker_container_start",
+      "mcp__docker__docker_container_stop",
+      "mcp__docker__docker_system_info",
+      "mcp__docker__docker_system_version",
+      "mcp__postgres__query",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__search_files",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__filesystem__list_directory",
+      "mcp__filesystem__list_directory_with_sizes",
+      "mcp__filesystem__get_file_info",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "mcp__redis__get",
+      "mcp__redis__set",
+      "mcp__redis__list",
+      "mcp__redis__delete",
+      "mcp__duckduckgo__search",
+      "mcp__fetch__fetch",
+      "mcp__memory__read_graph",
+      "mcp__memory__search_nodes",
+      "mcp__memory__create_entities",
+      "mcp__memory__add_observations",
+      "mcp__memory__create_relations",
+      "mcp__memory__open_nodes",
+      "mcp__memory__delete_entities",
+      "mcp__memory__delete_observations",
+      "mcp__memory__delete_relations",
+      "Skill(update-config)",
+      "Skill(update-config:*)"
+    ],
+    "additionalDirectories": [
+      "/etc/systemd/system",
+      "/etc/nginx/sites-available",
+      "/var/www"
+    ]
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-dev": true,
+    "frontend-design@claude-code-plugins": true,
+    "ui-ux-pro-max@ui-ux-pro-max-skill": true,
+    "get-design-done@get-design-done": true
+  },
+  "extraKnownMarketplaces": {
+    "superpowers-dev": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      }
+    },
+    "claude-code-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-code"
+      }
+    },
+    "ui-ux-pro-max-skill": {
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      }
+    },
+    "get-design-done": {
+      "source": {
+        "source": "github",
+        "repo": "hegemonart/get-design-done"
+      }
+    }
+  },
+  "effortLevel": "high"
+}
