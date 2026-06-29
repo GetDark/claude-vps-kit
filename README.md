@@ -1,6 +1,6 @@
-# Claude Code — Portable Environment Setup
+# claude-vps-kit
 
-Этот пакет разворачивает полное окружение Claude Code на новом VPS за один запуск.
+Разворачивает полное окружение Claude Code на новом VPS за один запуск.
 
 ## Что включено
 
@@ -20,12 +20,10 @@
 ## Быстрый старт
 
 ```bash
-# 1. Загрузить пакет на сервер
-scp -r claude-export/ root@YOUR_VPS_IP:/root/
-
-# 2. Зайти на сервер и запустить установщик
+# 1. Клонировать репозиторий на сервер
 ssh root@YOUR_VPS_IP
-cd /root/claude-export
+git clone git@github.com:GetDark/claude-vps-kit.git
+cd claude-vps-kit
 bash install.sh
 
 # 3. Перезапустить VSCode/Claude Code
